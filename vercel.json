@@ -1,0 +1,24 @@
+{
+    "version":2,
+    "builds": [
+        {
+            "src":"./index.py",
+            "use": "@vercel/python",
+            "config":{"runtime":"python3.12"}
+        }
+    ],
+    "routes": [
+        {
+            "src": "/recommend_books",
+            "dest": "/wsgi.py"
+        },
+        {
+            "src": "/contact",
+            "dest": "/wsgi.py"
+        },
+        {
+            "src": "/(.*)",
+            "dest": "/wsgi.py"
+        }
+    ]
+}
